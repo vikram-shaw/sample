@@ -1,0 +1,56 @@
+@import "../variables";
+
+.table {
+  th {
+    color: $fontColor;
+  }
+
+  td {
+    vertical-align:middle;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .active {
+    background-color: lighten($color: $primaryColor, $amount: 100);
+  }
+  i.action-active {
+    color: darken($color: #000000, $amount: 10);
+    cursor: pointer;
+  }
+
+  tr:hover {
+    background-color: darken($color: $primaryColor, $amount: 2);
+  }
+}
+
+.fa {
+  color: $lightColor;
+}
+
+.body-wrapper {
+  overflow: hidden;
+  display: flex;
+  height: calc($fullHeight - 5 * $gutter - $headHeight);
+  background-color: $secondaryColor;
+  .table-wrapper{
+    height: 100%;
+    width: 70%;
+    overflow: auto;
+  }
+}
+
+.btn-good {
+  border: none;
+  background-color: transparent;
+  border-bottom: 3px solid transparent;
+  outline: none;
+}
+
+.active {
+  border-bottom: 3px solid #101f40;
+}

@@ -1,0 +1,44 @@
+<div class="body-wrapper">
+  <div class="table-wrapper p-2">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" class="t-center">Date</th>
+          <th scope="col">List Name</th>
+          <th scope="col">No. of Entities</th>
+          <th scope="col">Actions</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let current of data">
+          <td scope="row" class="t-center">
+            <div *ngIf="current.date; else privatecircle">
+              {{current.date | date:'mediumDate'}}
+            </div>
+          </td>
+          <td class="bold">{{current.name}}</td>
+          <td class="t-right">{{current.entityCount}}</td>
+          <td>
+            <div class="actions">
+              <i class="fa" [ngClass]="{'fa-envelope': current.action.message, 'action-active': current === selectedItem}"></i>
+              <i class="fa" [ngClass]="{'fa-share-alt': current.action.share, 'action-active': current === selectedItem}"></i>
+              <i class="fa" [ngClass]="{'fa-pencil': current.action.edit, 'action-active': current === selectedItem}"></i>
+              <i class="fa" [ngClass]="{'fa-trash': current.action.delete, 'action-active': current === selectedItem}"></i>
+            </div>
+          </td>
+          <td>
+            <button class="btn-good" [ngClass]="{'active': current === selectedItem}" (click)="selectedItem = current;">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="width: 30%">
+    <vs-item [item]="selectedItem"></vs-item>
+  </div>
+</div>
+
+<ng-template #privatecircle>
+  <img src="https://privatecircle.co/static/images/noname_logo.png" height="32" width="32" alt="">
+</ng-template>

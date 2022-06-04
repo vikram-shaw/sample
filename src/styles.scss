@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap');
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import "./app/variables";
+
+*{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+body {
+  background-color: $primaryColor;
+  color: $fontColor;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.l-medium-height {
+  line-height: 2.5;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.t-right {
+
+}

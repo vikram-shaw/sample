@@ -1,0 +1,17 @@
+<div class="head-wrapper">
+  <div class="left-content">
+    <button [routerLink]="['saved-list']" [routerLinkActive]="'active'">
+      <i class="fas fa-list"></i>
+      SAVED LISTS
+    </button>
+    <button>
+      <i class="fa fa-filter"></i>
+      SAVED FILTERS
+    </button>
+    <button>
+      <i class="fa fa-history"></i>
+      SEARCH HISTORY
+    </button>
+  </div>
+  <input type="text" placeholder="Search" [(ngModel)]="searchText">
+</div>
